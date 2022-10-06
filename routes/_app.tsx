@@ -1,16 +1,16 @@
-import Header from "../components/Header.tsx";
+// import 'https://esm.sh/@fontsource/raleway@4.5.11/400.css';
 
-import { ChakraProvider, ColorModeScript } from 'https://esm.sh/@chakra-ui/react@2.3.5'
-import Navbar from "../components/Navbar.tsx";
-import Sidebar from "../components/Sidebar.tsx";
+import { ChakraProvider } from 'https://esm.sh/@chakra-ui/react@2.3.5'
 import Layout from "../components/Layout.tsx";
-import theme from "./theme.ts";
+import theme from '../themes/theme.tsx';
+import Fonts from '../themes/fonts.tsx';
+
 
 export default function App({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <ChakraProvider>
-        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+      <ChakraProvider theme={theme}>
+          <Fonts />
           <Layout>
             {children}
           </Layout>

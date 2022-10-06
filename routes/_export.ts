@@ -3,18 +3,16 @@
 
 import * as $0 from "./_404.tsx";
 import * as $1 from "./_app.tsx";
-import * as $2 from "./index-bawaan.tsx";
-import * as $3 from "./index.tsx";
+import * as $2 from "./index.tsx";
+import * as $3 from "./todos.tsx";
 import * as $4 from "./login.tsx";
-import * as $5 from "./theme.ts";
-import * as $6 from "./todos.tsx";
+import * as $5 from "./index-bawaan.tsx";
 
 export default {
   "/_404": $0,
   "/_app": $1,
-  "/index-bawaan": $2,
-  "/": $3,
+  "/": $2,
+  "/todos": $3,
   "/login": $4,
-  "/theme": $5,
-  "/todos": $6,
+  "/index-bawaan": $5,
 };
