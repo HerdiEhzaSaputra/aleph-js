@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-// import { Link } from "aleph/react" as LinkReact ;
+import { Link as LinkReact } from "aleph/react";
 import {
     IconButton,
     Avatar,
@@ -22,6 +22,10 @@ import {
     MenuDivider,
     MenuItem,
     MenuList,
+    useColorMode,
+Button,
+DarkMode,
+LightMode,
 } from 'https://esm.sh/@chakra-ui/react@2.3.5';
 import {
     HomeModernIcon,
@@ -97,14 +101,14 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
             h="full"
             {...rest}>
             <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-                <Link 
+                <LinkReact
                     role="button"
                     to="/"
                 >
                     <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
                         Logo
                     </Text>
-                </Link>
+                </LinkReact>
                 <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
             </Flex>
             {LinkItems.map((link) => (
@@ -155,6 +159,8 @@ interface MobileProps extends FlexProps {
     onOpen: () => void;
 }
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
+    const { colorMode, toggleColorMode } = useColorMode()
+
     return (
         <Flex
             ml={{ base: 0, md: 60 }}
@@ -183,6 +189,22 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
             </Text>
 
             <HStack spacing={{ base: '0', md: '6' }}>
+                <LightMode>
+                    <Button size='sm' colorScheme='blue'>
+                        Light Mode Always
+                    </Button>
+                </LightMode>
+
+                <DarkMode>
+                    <Button size='sm' colorScheme='blue'>
+                        Dark Mode Always
+                    </Button>
+                </DarkMode>
+
+                <Button size='sm' colorScheme='blue' onClick={toggleColorMode}>
+                    Toggle Mode
+                </Button>
+                
                 <IconButton
                     size="lg"
                     variant="ghost"
