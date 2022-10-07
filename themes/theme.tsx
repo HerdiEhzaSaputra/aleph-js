@@ -8,11 +8,9 @@ import { sliderStyles } from './components/slider.ts';
 import { textareaStyles } from './components/textarea.ts';
 import { switchStyles } from './components/switch.ts';
 import { linkStyles } from './components/link.ts';
-import { breakpoints } from './foundations/breakpoints.ts';
 import { globalStyles } from './styles.ts';
 
-export default extendTheme(
-	{ breakpoints }, // Breakpoints
+export default extendTheme({
 	globalStyles,
 	badgeStyles, // badge styles
 	buttonStyles, // button styles
@@ -22,7 +20,10 @@ export default extendTheme(
 	inputStyles, // input styles
 	textareaStyles, // textarea styles
 	switchStyles, // switch styles
-	CardComponent // card component
-);
+	CardComponent, // card component
+	fonts: {
+		heading: `'xezar app font', sans-serif`,
+	}
+});
 
 export interface CustomCardProps extends HTMLChakraProps<'div'>, ThemingProps {}
